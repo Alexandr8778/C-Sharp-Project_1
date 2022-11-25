@@ -1,42 +1,22 @@
-# Напишите программу, которая принимает на вход вещественное число и показывает сумму его цифр.
+# Задайте список из нескольких чисел. Напишите программу, которая найдёт сумму элементов списка, стоящих на нечётной позиции.
 
 # Пример:
 
-# - 6782 -> 23
-# - 0,56 -> 11
+# - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
 
-
-x = input('Введите число ')
-
-def summa(x):                            #Функция нахождения суммы чисел в заданном числе
-    if float(x) < 0:                            #Проверка на знак перед числом
-        x = float(x) * (-1)
-    number = 0
-
-    for i in str(x):
-        if i != '.':
-            number += int(i)
-    return number
-
-   
-print(f'Сумма чисел равна {summa(x)}')
-
-# float_num = input('input float number: ')
-
+# number = int(input('Введите размер списка '))
+# list = []
 # sum = 0
-# for i in float_num:
-#     if i != '.':
-#         sum += int(i)
-# print(sum)
+# for i in range(number):
+#     list_number = int(input(f'Введите число {i+1} '))
+#     list.append(list_number)
+#     if i % 2 != 0:
+#         sum += list[i]
 
-# x =float(0.25 % 0.04)
-# print(round((x), 2))
 
-#  if x > 1 or x < -1:
-#         while x != 0:                        #Нахождение суммы
-#             number = x % 10 + number
-#             x = int(x / 10)
-#     elif x < 1 and x > -1:
-#         while x != '.':
-#             number +=  int
-#     return number
+# print(list)
+# print(f'Сумма нечетных чисел равна {sum}')
+
+
+my_list = [8, 5, 7, 3, 6]
+print(sum(my_list[1::2]))
