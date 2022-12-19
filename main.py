@@ -1,20 +1,13 @@
-def sort_data(number,read,write,sor,da,data):
-    while True: 
-        d=number()
-        if d=='1':
-            print(*da(0,read()),sep='\n')    
-        elif d=='2':
-            print(*da(1,read()),sep='\n')        
-        elif d=='3':
-            print(*da(2,read()),sep='\n')    
-        elif d=='4':
-            print(*sor(input('Введите № класса: '),read()),sep='')   
-        elif d=='5':
-            print(*read(),sep='')
-        elif d=='6':
-            print(*sor(input('Введите фамилию ученика:'),read()),sep='')    
-        elif d=='7':
-            write(data())
-        elif d=='8':
-            print('До свидания!')        
-            break
+from c_calc import Calc_block as c_calc
+from logger import result_logger as write_log
+import data_transformation as d_t
+import console_ui as c_ui
+
+
+def button_click():
+    j = d_t.data_formatting(c_ui.input_data())
+    calc_result = c_calc(j)
+    c_ui.view_data(calc_result, 'Ответ:')
+    write_log(j, calc_result)
+
+button_click()
